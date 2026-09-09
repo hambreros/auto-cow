@@ -1,0 +1,18 @@
+[tools]
+node = "lts"
+
+# Loads SITE_URL / GAME_USERNAME / GAME_PASSWORD / HEADLESS from .env
+# (copy .env.example to .env first) into every mise task and `mise en` shell.
+[env]
+_.file = ".env"
+
+[tasks.setup]
+description = "Install JS deps and download the Chromium build Playwright drives"
+run = [
+  "npm install",
+  "npx playwright install chromium",
+]
+
+[tasks.play]
+description = "Open a real browser at SITE_URL and capture network/WebSocket traffic while you play"
+run = "node scripts/capture.mjs"

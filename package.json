@@ -1,0 +1,11 @@
+{
+  "name": "auto-cow",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "play": "node scripts/capture.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
